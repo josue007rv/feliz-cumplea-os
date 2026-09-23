@@ -1,1 +1,653 @@
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffde7,
+            #fff8c4,
+            #ffe082
+        );
+
+    color: #5d4b18;
+}
+
+
+/* =========================================================
+   PANTALLA INICIAL
+========================================================= */
+
+.pantalla-inicio {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffde7,
+            #ffe082
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+/* Cuando se abre la tarjeta */
+.pantalla-inicio.ocultar {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* Contenedor del sobre */
+.sobre {
+    width: min(90%, 500px);
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 25px 70px rgba(130, 90, 0, 0.25);
+
+    animation:
+        aparecer 1.2s ease;
+}
+
+
+.flor-sobre {
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+    animation:
+        balancear 3s ease-in-out infinite;
+}
+
+
+.sobre h1 {
+    color: #c58b00;
+
+    font-size: clamp(2rem, 8vw, 3rem);
+
+    margin-bottom: 10px;
+}
+
+
+.sobre h2 {
+    color: #806000;
+
+    margin-bottom: 20px;
+}
+
+
+.sobre p {
+    margin-bottom: 30px;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   TARJETA
+========================================================= */
+
+.tarjeta {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.5s ease;
+}
+
+
+/* Cuando la tarjeta está activa */
+.tarjeta.mostrar {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.contenido {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(100%, 650px);
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 25px 60px rgba(130, 90, 0, 0.22);
+
+    backdrop-filter: blur(12px);
+
+    animation:
+        subir 1.2s ease;
+}
+
+
+.pequeno {
+    color: #b38300;
+
+    font-size: 1rem;
+
+    margin-bottom: 10px;
+}
+
+
+.contenido h1 {
+    color: #d49600;
+
+    font-size:
+        clamp(2.2rem, 8vw, 4rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 10px;
+}
+
+
+.contenido h2 {
+    color: #806000;
+
+    font-size:
+        clamp(1.5rem, 5vw, 2.5rem);
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   FLOR PRINCIPAL
+========================================================= */
+
+.flor-principal {
+    position: relative;
+
+    width: 170px;
+    height: 170px;
+
+    margin: 10px auto 30px;
+
+    animation:
+        balancear 4s ease-in-out infinite;
+}
+
+
+.petalo {
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #fff176,
+            #ffd600
+        );
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset -6px -6px 12px
+        rgba(170, 120, 0, 0.18);
+}
+
+
+/* Posición de cada pétalo */
+
+.petalo-1 {
+    top: 0;
+    left: 48px;
+}
+
+.petalo-2 {
+    top: 48px;
+    left: 0;
+}
+
+.petalo-3 {
+    top: 48px;
+    right: 0;
+}
+
+.petalo-4 {
+    bottom: 0;
+    left: 48px;
+}
+
+.petalo-5 {
+    top: 48px;
+    left: 48px;
+
+    transform:
+        scale(0.75);
+}
+
+
+/* Centro de la flor */
+
+.centro-flor {
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    top: 55px;
+    left: 55px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #8d5a00,
+            #633e00
+        );
+
+    box-shadow:
+        0 0 0 8px
+        rgba(255, 214, 0, 0.25);
+}
+
+
+/* =========================================================
+   MENSAJE
+========================================================= */
+
+.mensaje {
+    max-width: 540px;
+
+    margin: auto;
+
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+}
+
+
+.mensaje p {
+    margin-bottom: 18px;
+}
+
+
+.mensaje strong {
+    color: #c58b00;
+}
+
+
+.mensaje .final {
+    color: #b17900;
+
+    font-weight: bold;
+
+    font-size: 1.15rem;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.boton-principal {
+    border: none;
+
+    padding: 14px 30px;
+
+    margin-top: 15px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd740,
+            #ffca28
+        );
+
+    color: #5d4300;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(160, 110, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.boton-principal:hover {
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 15px 30px
+        rgba(160, 110, 0, 0.35);
+}
+
+
+/* Botón WhatsApp */
+
+.boton-whatsapp {
+    display: block;
+
+    width: fit-content;
+
+    margin: 18px auto 0;
+
+    padding: 13px 25px;
+
+    border-radius: 50px;
+
+    background: #25D366;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.boton-whatsapp:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(37, 211, 102, 0.3);
+}
+
+
+/* =========================================================
+   FLORES FLOTANTES DEL FONDO
+========================================================= */
+
+.flores-fondo span {
+    position: absolute;
+
+    bottom: -80px;
+
+    font-size: 45px;
+
+    opacity: 0.7;
+
+    animation:
+        subirFlor 9s linear infinite;
+}
+
+
+.flores-fondo span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.flores-fondo span:nth-child(2) {
+    left: 20%;
+    animation-delay: 3s;
+}
+
+.flores-fondo span:nth-child(3) {
+    left: 40%;
+    animation-delay: 5s;
+}
+
+.flores-fondo span:nth-child(4) {
+    right: 35%;
+    animation-delay: 2s;
+}
+
+.flores-fondo span:nth-child(5) {
+    right: 15%;
+    animation-delay: 6s;
+}
+
+.flores-fondo span:nth-child(6) {
+    right: 3%;
+    animation-delay: 1s;
+}
+
+
+@keyframes subirFlor {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform:
+            translateY(-45vh)
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   BRILLOS
+========================================================= */
+
+.brillo {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px white;
+
+    animation:
+        brillo 2s infinite alternate;
+}
+
+
+.brillo-1 {
+    top: 15%;
+    left: 15%;
+}
+
+.brillo-2 {
+    top: 30%;
+    right: 15%;
+
+    animation-delay: 0.5s;
+}
+
+.brillo-3 {
+    bottom: 20%;
+    left: 10%;
+
+    animation-delay: 1s;
+}
+
+.brillo-4 {
+    bottom: 15%;
+    right: 10%;
+
+    animation-delay: 1.5s;
+}
+
+
+@keyframes brillo {
+
+    from {
+        opacity: 0.2;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+
+/* =========================================================
+   ANIMACIONES GENERALES
+========================================================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes subir {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes balancear {
+
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contenido {
+        padding: 35px 20px;
+
+        border-radius: 25px;
+    }
+
+    .mensaje {
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+    .flor-principal {
+        transform: scale(0.85);
+    }
+
+    .boton-whatsapp {
+        font-size: 0.9rem;
+    }
+}
