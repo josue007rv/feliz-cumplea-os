@@ -401,41 +401,6 @@ body {
 }
 
 
-/* Botón WhatsApp */
-
-.boton-whatsapp {
-    display: block;
-
-    width: fit-content;
-
-    margin: 18px auto 0;
-
-    padding: 13px 25px;
-
-    border-radius: 50px;
-
-    background: #25D366;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-.boton-whatsapp:hover {
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(37, 211, 102, 0.3);
-}
 
 
 /* =========================================================
