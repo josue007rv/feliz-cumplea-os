@@ -1,168 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <!-- Configuración básica de la página -->
+    <!-- Configuración básica y adaptación a móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Información para WhatsApp y redes sociales -->
-    <meta name="description"
-        content="Una pequeña sorpresa de cumpleaños para Martha Massiel 🌻">
-
-    <meta property="og:title"
-        content="🌻 Feliz Cumpleaños Martha Massiel">
-
-    <meta property="og:description"
-        content="Una pequeña sorpresa preparada especialmente para ti 💛">
-
-    <meta property="og:type"
-        content="website">
-
-    <title>🌻 Feliz Cumpleaños Martha Massiel</title>
-
-    <!-- Hoja de estilos -->
+    <meta name="description" content="Una sorpresa especial para Martha Massiel.">
+    <meta property="og:title" content="Una sorpresa para Martha Massiel">
+    <meta property="og:description" content="Un recuerdo bonito y unas palabras para ti.">
+    <meta property="og:type" content="website">
+    <title>Una sorpresa para ti 💛</title>
+    <!-- Estilos principales -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-    <!-- =====================================================
-         PANTALLA DE INICIO
-         Esta pantalla aparece antes de abrir la tarjeta.
-    ====================================================== -->
-
+    <!-- PÁGINA 1: bienvenida -->
     <section id="inicio" class="pantalla-inicio">
-
         <div class="sobre">
-
-            <!-- Flor decorativa -->
-            <div class="flor-sobre">🌻</div>
-
-            <h1>Una sorpresa para ti</h1>
-
-            <h2>Martha Massiel 💛</h2>
-
-            <p>
-                Hay algo especial esperándote...
-            </p>
-
-            <!-- Botón que abre la tarjeta -->
-            <button id="abrirBtn" class="boton-principal">
-                🌻 Abrir sorpresa
-            </button>
-
+            <div class="flor-sobre" aria-hidden="true">🌻</div>
+            <p class="etiqueta">Un recuerdo bonito</p>
+            <h1>¿Recuerdas tu cumpleaños?</h1>
+            <h2>La pasamos genial 💛</h2>
+            <p>Hay momentos que merecen volver a sonreírse. Preparé algo especial para ti.</p>
+            <button id="abrirBtn" class="boton-principal">Volver a ese recuerdo ✨</button>
         </div>
-
+        <div class="decoracion-inicio" aria-hidden="true">✦　🌼　✧　🌻　✦</div>
     </section>
 
-
-    <!-- =====================================================
-         TARJETA PRINCIPAL
-         Inicialmente permanece oculta.
-    ====================================================== -->
-
+    <!-- PÁGINA 2: tarjeta original de cumpleaños -->
     <main id="tarjeta" class="tarjeta">
-
-        <!-- Flores flotantes -->
-        <div class="flores-fondo">
-
-            <span>🌻</span>
-            <span>🌼</span>
-            <span>🌻</span>
-            <span>🌼</span>
-            <span>🌻</span>
-            <span>🌼</span>
-
+        <div class="flores-fondo" aria-hidden="true">
+            <span>🌻</span><span>🌼</span><span>🌻</span>
+            <span>🌼</span><span>🌻</span><span>🌼</span>
         </div>
-
-
-        <!-- Brillos decorativos -->
         <div class="brillo brillo-1"></div>
         <div class="brillo brillo-2"></div>
         <div class="brillo brillo-3"></div>
         <div class="brillo brillo-4"></div>
 
-
         <div class="contenido">
+            <p class="pequeno">✨ Hoy es un día especial ✨</p>
+            <h1>¡Feliz Cumpleaños!</h1>
+            <h2>Martha Massiel 🌻</h2>
 
-            <p class="pequeno">
-                ✨ Hoy es un día especial ✨
-            </p>
-
-            <h1>
-                ¡Feliz Cumpleaños!
-            </h1>
-
-            <h2>
-                Martha Massiel 🌻
-            </h2>
-
-
-            <!-- Flor principal -->
-            <div class="flor-principal">
-
+            <!-- Flor decorativa hecha con CSS -->
+            <div class="flor-principal" aria-hidden="true">
                 <div class="petalo petalo-1"></div>
                 <div class="petalo petalo-2"></div>
                 <div class="petalo petalo-3"></div>
                 <div class="petalo petalo-4"></div>
                 <div class="petalo petalo-5"></div>
                 <div class="centro-flor"></div>
-
             </div>
 
-
-            <!-- =================================================
-                 DEDICATORIA
-            ================================================== -->
-
+            <!-- Se conserva la dedicatoria original -->
             <div class="mensaje">
-
-                <p>
-                    Querida <strong>Martha Massiel</strong>:
-                </p>
-
-                <p>
-                    Hoy quiero desearte un cumpleaños lleno de
-                    momentos bonitos, sonrisas sinceras y mucha
-                    alegría.
-                </p>
-
-                <p>
-                    Que este nuevo año de vida venga acompañado
-                    de nuevas experiencias, sueños cumplidos y
-                    muchas razones para seguir sonriendo.
-                </p>
-
-                <p>
-                    Espero que disfrutes muchísimo tu día y que
-                    recibas todo el cariño que mereces.
-                </p>
-
-                <p class="final">
-                    🌻 ¡Que tengas un cumpleaños maravilloso! 🌻
-                </p>
-
+                <p>Querida <strong>Martha Massiel</strong>:</p>
+                <p>Hoy quiero desearte un cumpleaños lleno de momentos bonitos, sonrisas sinceras y mucha alegría.</p>
+                <p>Que este nuevo año de vida venga acompañado de nuevas experiencias, sueños cumplidos y muchas razones para seguir sonriendo.</p>
+                <p>Espero que disfrutes muchísimo tu día y que recibas todo el cariño que mereces.</p>
+                <p class="final">🌻 ¡Que tengas un cumpleaños maravilloso! 🌻</p>
             </div>
 
-
-            <!-- Botón para lanzar flores -->
-            <button id="celebrarBtn" class="boton-principal">
-                🎉 Celebrar
-            </button>
-
-
-
-            </a>
-
+            <button id="celebrarBtn" class="boton-principal">🎉 Celebrar</button>
+            <button id="siguienteBtn" class="boton-secundario">Siguiente →</button>
         </div>
-
     </main>
 
+    <!-- PÁGINA 3: mensaje final de aliento -->
+    <section id="final" class="pantalla-final">
+        <div class="contenido-final">
+            <div class="flor-sobre" aria-hidden="true">🌷</div>
+            <p class="etiqueta">Unas palabras para ti</p>
+            <h1>Confía en todo lo que puedes lograr</h1>
+            <p>Nunca dudes de lo que eres capaz de lograr. Tienes una inteligencia enorme, una mente llena de posibilidades y la fortaleza necesaria para afrontar cualquier reto que la vida ponga frente a ti.</p>
+            <p>Los nuevos comienzos también son oportunidades para demostrar todo lo que puedes alcanzar. No tengas miedo de los retos: tienes dentro de ti las herramientas para salir adelante.</p>
+            <p class="mensaje-final-destacado">¡Confía en ti! 💛</p>
+            <div class="separador-floral" aria-hidden="true">🌻 ✨ 🌼</div>
+            <h2>Lo mejor de tu historia todavía está por escribirse.</h2>
+        </div>
+    </section>
 
-    <!-- JavaScript -->
+    <!-- Lógica de navegación y animaciones -->
     <script src="js/script.js"></script>
-
 </body>
-
 </html>
