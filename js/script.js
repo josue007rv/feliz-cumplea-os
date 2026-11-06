@@ -1,172 +1,104 @@
 /* =========================================================
-   ELEMENTOS DE LA PÁGINA
+   ELEMENTOS DE LAS TRES PÁGINAS
 ========================================================= */
 
-// Pantalla inicial
+// Página de bienvenida, tarjeta original y página final.
 const inicio = document.getElementById("inicio");
-
-// Tarjeta principal
 const tarjeta = document.getElementById("tarjeta");
+const paginaFinal = document.getElementById("final");
 
-// Botón para abrir la sorpresa
+// Botones de navegación y celebración.
 const abrirBtn = document.getElementById("abrirBtn");
-
-// Botón para celebrar
 const celebrarBtn = document.getElementById("celebrarBtn");
-
+const siguienteBtn = document.getElementById("siguienteBtn");
 
 /* =========================================================
-   ABRIR LA TARJETA
+   PÁGINA 1 -> PÁGINA 2
 ========================================================= */
 
 abrirBtn.addEventListener("click", () => {
-
-    // Ocultamos la pantalla inicial
+    // Ocultamos la bienvenida y revelamos la tarjeta original.
     inicio.classList.add("ocultar");
-
-    // Mostramos la tarjeta
     tarjeta.classList.add("mostrar");
 
-    // Desplazamos la página al inicio
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
+    // Llevamos la vista al comienzo de la tarjeta.
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-
 /* =========================================================
-   CELEBRACIÓN
+   CELEBRACIÓN CON FLORES
 ========================================================= */
 
 celebrarBtn.addEventListener("click", () => {
-
-    // Creamos varias flores
-    // que aparecerán desde abajo.
-
+    // Lanzamos flores decorativas sin bloquear la navegación.
     for (let i = 0; i < 25; i++) {
-
         crearFlor();
-
     }
-
 });
 
+/* =========================================================
+   PÁGINA 2 -> PÁGINA 3
+========================================================= */
+
+siguienteBtn.addEventListener("click", () => {
+    // Ocultamos la tarjeta y mostramos el mensaje de aliento.
+    tarjeta.style.display = "none";
+    paginaFinal.classList.add("mostrar-final");
+
+    // Subimos suavemente al inicio de la última página.
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 /* =========================================================
-   FUNCIÓN PARA CREAR FLORES
+   FUNCIÓN PARA CREAR FLORES ANIMADAS
 ========================================================= */
 
 function crearFlor() {
-
-    // Creamos un nuevo elemento
+    // Creamos un elemento nuevo y elegimos una flor al azar.
     const flor = document.createElement("div");
-
-    // Elegimos aleatoriamente entre dos flores
     const flores = ["🌻", "🌼"];
-
-    flor.textContent =
-        flores[Math.floor(Math.random() * flores.length)];
-
-
-    // Clase para aplicar estilos
+    flor.textContent = flores[Math.floor(Math.random() * flores.length)];
     flor.classList.add("flor-celebracion");
 
+    // Asignamos posición, tamaño y duración aleatorios.
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.fontSize = 20 + Math.random() * 35 + "px";
+    flor.style.animationDuration = 3 + Math.random() * 3 + "s";
 
-    // Posición horizontal aleatoria
-    flor.style.left =
-        Math.random() * 100 + "vw";
-
-
-    // Tamaño aleatorio
-    flor.style.fontSize =
-        20 + Math.random() * 35 + "px";
-
-
-    // Velocidad aleatoria
-    flor.style.animationDuration =
-        3 + Math.random() * 3 + "s";
-
-
-    // Agregamos la flor a la página
+    // Añadimos la flor y la retiramos al terminar su animación.
     document.body.appendChild(flor);
-
-
-    // Eliminamos la flor después de terminar
-    // la animación para no acumular elementos.
-    setTimeout(() => {
-
-        flor.remove();
-
-    }, 6000);
-
+    setTimeout(() => flor.remove(), 6000);
 }
 
-
 /* =========================================================
-   ESTILOS DINÁMICOS PARA LAS FLORES DE CELEBRACIÓN
+   ESTILOS DINÁMICOS DE LAS FLORES
 ========================================================= */
 
 const estilosCelebracion = document.createElement("style");
-
 estilosCelebracion.textContent = `
-
     .flor-celebracion {
-
         position: fixed;
-
         bottom: -60px;
-
         z-index: 9999;
-
         pointer-events: none;
-
-        animation:
-            florCelebracion 4s linear forwards;
-
+        animation: florCelebracion 4s linear forwards;
     }
 
     @keyframes florCelebracion {
-
         0% {
-
-            transform:
-                translateY(0)
-                rotate(0deg);
-
+            transform: translateY(0) rotate(0deg);
             opacity: 0;
-
         }
-
-        15% {
-
-            opacity: 1;
-
-        }
-
+        15% { opacity: 1; }
         50% {
-
-            transform:
-                translateY(-50vh)
-                rotate(180deg);
-
+            transform: translateY(-50vh) rotate(180deg);
         }
-
         100% {
-
-            transform:
-                translateY(-110vh)
-                rotate(360deg);
-
+            transform: translateY(-110vh) rotate(360deg);
             opacity: 0;
-
         }
-
     }
-
 `;
 
-
-// Agregamos los estilos al documento
+// Incorporamos los estilos al documento una sola vez.
 document.head.appendChild(estilosCelebracion);

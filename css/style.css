@@ -616,3 +616,121 @@ body {
         font-size: 0.9rem;
     }
 }
+
+
+/* =========================================================
+   NUEVA BIENVENIDA Y NAVEGACIÓN ENTRE LAS TRES PÁGINAS
+========================================================= */
+
+.etiqueta {
+    color: #b38300;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.sobre h1 {
+    line-height: 1.12;
+}
+
+.decoracion-inicio {
+    position: absolute;
+    bottom: 7%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: rgba(160, 110, 0, 0.65);
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
+    letter-spacing: 0.3em;
+    pointer-events: none;
+    animation: aparecer 2s ease both;
+}
+
+.boton-secundario {
+    display: block;
+    margin: 14px auto 0;
+    padding: 12px 28px;
+    border: 1px solid rgba(181, 132, 0, 0.35);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.75);
+    color: #806000;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.boton-secundario:hover {
+    transform: translateY(-3px);
+    background: #fff8dc;
+}
+
+/* La última página se muestra solo al pulsar Siguiente */
+.pantalla-final {
+    display: none;
+    min-height: 100vh;
+    padding: 55px 20px;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.9), transparent 28%),
+        linear-gradient(135deg, #fffde7, #fff1c1 55%, #ffe082);
+}
+
+.pantalla-final.mostrar-final {
+    display: flex;
+    animation: aparecer 1s ease both;
+}
+
+.contenido-final {
+    width: min(100%, 760px);
+    padding: clamp(30px, 6vw, 60px);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 32px;
+    box-shadow: 0 25px 70px rgba(130, 90, 0, 0.18);
+    backdrop-filter: blur(12px);
+}
+
+.contenido-final h1 {
+    color: #bd8500;
+    font-size: clamp(2rem, 6vw, 3.3rem);
+    line-height: 1.12;
+    margin-bottom: 24px;
+}
+
+.contenido-final p {
+    color: #665322;
+    font-size: clamp(1rem, 2.5vw, 1.12rem);
+    line-height: 1.85;
+    margin: 0 auto 18px;
+    max-width: 620px;
+}
+
+.contenido-final .mensaje-final-destacado {
+    color: #b17900;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-top: 26px;
+}
+
+.separador-floral {
+    margin: 24px 0;
+    font-size: 1.7rem;
+    letter-spacing: 0.4em;
+}
+
+.contenido-final h2 {
+    color: #806000;
+    font-size: clamp(1.25rem, 4vw, 1.8rem);
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .sobre { padding: 38px 22px; }
+    .contenido-final { border-radius: 24px; }
+    .decoracion-inicio { bottom: 3%; }
+}
